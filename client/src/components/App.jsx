@@ -32,6 +32,10 @@ function App() {
 
   async function addNote(event) {
     event.preventDefault();
+    if (!title.trim() || !content.trim()) {
+      alert("Title and content are required.");
+      return;
+    }
     const newNote = {
       title: title,
       content: content,
